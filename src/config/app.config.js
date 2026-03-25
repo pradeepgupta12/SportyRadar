@@ -35,14 +35,17 @@ export const appConfig = {
 
   // Cricket sub-tabs
   cricketTabs: [
-    { id: 'scores', label: 'Scores', path: '/cricket' },
-    { id: 'series', label: 'Series', path: '/cricket/series' },
-    { id: 'fixtures', label: 'Fixtures', path: '/cricket/fixtures' },
-    { id: 'results', label: 'Results', path: '/cricket/results' },
-    { id: 'news', label: 'News', path: '/cricket/news' },
-    { id: 'photos', label: 'Photos', path: '/photogallary' },
-    { id: 'video', label: 'Video', path: '/vediogallary' },
-  ],
+  { id: 'scores', label: 'Scores', path: '/cricket' },
+  { id: 'series', label: 'Series', path: '/cricket/series' },
+  { id: 'fixtures', label: 'Fixtures', path: '/cricket/fixtures' },
+  { id: 'results', label: 'Results', path: '/cricket/results' },
+  { id: 'ipl', label: 'IPL 2026', path: '/cricket/ipl' },
+  { id: 'players', label: 'Players', path: '/cricket/players' },
+  { id: 'teams', label: 'Teams', path: '/cricket/ipl/teams' },
+  { id: 'news', label: 'News', path: '/cricket/news' },
+  { id: 'photos', label: 'Photos', path: '/photogallary' },
+  { id: 'video', label: 'Video', path: '/vediogallary' },
+],
 
   // Blog categories
   blogCategories: [
