@@ -18,7 +18,7 @@ export const appConfig = {
   // Navigation
   navItems: [
     { label: 'Home', path: '/' },
-    { label: 'Features', path: '/features' },
+    //{ label: 'Features', path: '/features' },
     { label: 'News', path: '/news' },
     { label: 'Blogs', path: '/blogs' },
   ],
