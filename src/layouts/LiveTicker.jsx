@@ -62,45 +62,49 @@ const TickerCard = memo(({ match, onClick }) => {
           </span>
         </div>
 
-<div className="mx-4 flex items-center justify-center">
+<div className="flex items-center justify-center w-14">
   <svg
-    width="36"
-    height="36"
-    viewBox="0 0 24 24"
+    width="52"
+    height="52"
+    viewBox="0 0 52 52"
     fill="none"
     className="text-white/70"
   >
-    {/* Diagonal line */}
+    {/* Diagonal slash */}
     <line
-      x1="8"
-      y1="20"
-      x2="20"
-      y2="6"
+      x1="25"
+      y1="8"
+      x2="12"
+      y2="44"
       stroke="currentColor"
-      strokeWidth="1"
+      strokeWidth="1.2"
       strokeLinecap="round"
     />
 
-    {/* v */}
+    {/* v — top-left */}
     <text
-      x="6"
-      y="14"
+      x="9"
+      y="26"
       fill="currentColor"
-      fontSize="15"
-      fontWeight="500"
+      fontSize="20"
+      fontWeight="600"
       fontStyle="italic"
+      dominantBaseline="middle"
+      textAnchor="middle"
     >
       v
     </text>
 
-    {/* s */}
+    {/* s — bottom-right */}
     <text
-      x="13"
-      y="19"
+      x="25"
+      y="26"
       fill="currentColor"
-      fontSize="15"
-      fontWeight="500"
+      fontSize="20"
+      fontWeight="600"
       fontStyle="italic"
+      dominantBaseline="middle"
+      textAnchor="middle"
     >
       s
     </text>
