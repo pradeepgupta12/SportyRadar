@@ -130,7 +130,7 @@ const IPLPage = lazy(() => import('@/features/cricket/pages/IPLPage'))
 const IPLScorecardPage = lazy(() => import('../features/cricket/pages/Iplscorecardpage.jsx'))
 const IPLMatchTeamsPage = lazy(() => import('@/features/cricket/pages/IPLMatchTeamsPage'))
 const PlayerCardPage = lazy(() => import('@/features/cricket/pages/PlayerCardPage'))
-const PlayerDetailPage = lazy(() => import('@/features/cricket/pages/PlayerDetailPage'))
+const PlayerDetailPage = lazy(() => import('../features/cricket/pages/PlayerDetailPage'))
 const TeamListPage = lazy(() => import('@/features/cricket/pages/TeamListPage'))
 const NotFoundPage = lazy(() => import('./NotFoundPage'))
 
@@ -167,7 +167,7 @@ export const router = createBrowserRouter([
 { path: 'cricket/results', element: <CricketResultsPage /> },
 { path: 'cricket/ipl', element: <IPLPage /> },
 { path: 'cricket/ipl/teams', element: <TeamListPage /> },
- { path: 'cricket/ipl/match/:matchId/scorecard', element: <IPLScorecardPage /> },
+ { path: 'cricket/ipl/scorecard/:slug/:series', element: <IPLScorecardPage /> },
 { path: 'cricket/players', element: <PlayerCardPage /> },
 { path: 'cricket/player/:id', element: <PlayerDetailPage /> },
 { path: 'cricket/news', element: <NewsListPage /> },

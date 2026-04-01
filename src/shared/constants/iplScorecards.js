@@ -1,10 +1,11 @@
 // iplScorecards.js – Complete scorecard data for all IPL matches
 
-export const iplScorecards = {
+export const iplScorecards = [
   // Match 1: RCB vs SRH
-  "ipl-1": {
-    matchId: "ipl-1",
-    matchNumber: "1st Match",
+ {
+  slug: "rcb-vs-srh",
+    series: "ipl-2026",
+   
     venue: "Bengaluru, M.Chinnaswamy Stadium",
     date: "Sat, Mar 28 2026",
     time: "7:30 PM",
@@ -15,6 +16,7 @@ export const iplScorecards = {
       team1: {
         name: "Royal Challengers Bengaluru",
         code: "RCB",
+        color: "#dc2626",
         innings: {
           inningsNumber: 1,
           total: "185/7",
@@ -135,6 +137,7 @@ export const iplScorecards = {
       team2: {
         name: "Sunrisers Hyderabad",
         code: "SRH",
+        color: "#f97316",
         innings: {
           inningsNumber: 2,
           total: "170/8",
@@ -268,9 +271,10 @@ export const iplScorecards = {
   },
 
   // Match 2: MI vs CSK
-  "ipl-2": {
-    matchId: "ipl-2",
-    matchNumber: "2nd Match",
+  {
+  slug: "mi-vs-csk",
+    series: "ipl-2026",
+   
     venue: "Mumbai, Wankhede Stadium",
     date: "Sun, Mar 29 2026",
     time: "7:30 PM",
@@ -281,6 +285,7 @@ export const iplScorecards = {
       team1: {
         name: "Mumbai Indians",
         code: "MI",
+        color: "#1e40af",
         innings: {
           inningsNumber: 1,
           total: "198/5",
@@ -389,6 +394,7 @@ export const iplScorecards = {
       team2: {
         name: "Chennai Super Kings",
         code: "CSK",
+        color: "#fbbf24",
         innings: {
           inningsNumber: 2,
           total: "190/7",
@@ -510,9 +516,9 @@ export const iplScorecards = {
   },
 
   // Match 3: KKR vs DC
-  "ipl-3": {
-    matchId: "ipl-3",
-    matchNumber: "3rd Match",
+{
+   slug: "kkr-vs-dc",
+    series: "ipl-2026",
     venue: "Kolkata, Eden Gardens",
     date: "Mon, Mar 30 2026",
     time: "7:30 PM",
@@ -523,6 +529,7 @@ export const iplScorecards = {
       team1: {
         name: "Kolkata Knight Riders",
         code: "KKR",
+        color: "#7c3aed",
         innings: {
           inningsNumber: 1,
           total: "162/9",
@@ -668,6 +675,7 @@ export const iplScorecards = {
       team2: {
         name: "Delhi Capitals",
         code: "DC",
+        color: "#ef4444",
         innings: {
           inningsNumber: 2,
           total: "163/4",
@@ -765,9 +773,9 @@ export const iplScorecards = {
   },
 
   // Match 4: PBKS vs RR
-  "ipl-4": {
-    matchId: "ipl-4",
-    matchNumber: "4th Match",
+{
+     slug: "pbks-vs-rr",
+    series: "ipl-2026",
     venue: "Mohali, PCA Stadium",
     date: "Tue, Mar 31 2026",
     time: "7:30 PM",
@@ -778,6 +786,7 @@ export const iplScorecards = {
       team1: {
         name: "Punjab Kings",
         code: "PBKS",
+        color: "#dc2626",
         innings: {
           inningsNumber: 1,
           total: "175/6",
@@ -898,6 +907,7 @@ export const iplScorecards = {
       team2: {
         name: "Rajasthan Royals",
         code: "RR",
+        color: "#fbbf24",
         innings: {
           inningsNumber: 2,
           total: "176/5",
@@ -1005,4 +1015,4 @@ export const iplScorecards = {
       }
     }
   }
-};
+];

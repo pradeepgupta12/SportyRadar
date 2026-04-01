@@ -8,7 +8,8 @@ import CricketTabs from '../components/CricketTabs'
 import SectionHeader from '@/shared/components/SectionHeader'
 import BlogsSection from '@/shared/components/BlogsSection'
 import SeoManager from '@/core/seo/SeoManager'
-import { iplMatches } from '@/shared/constants/cricket.data'
+
+import { iplScorecards } from '@/shared/constants/iplScorecards'
 
 // Tab → route mapping
 const TAB_ROUTES = {
@@ -22,7 +23,7 @@ const IPLMatchCard = ({ match }) => {
   return (
     <div
       className="bg-white dark:bg-[#1c2128] border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200 mb-3 sm:mb-4 cursor-pointer"
-      onClick={() => navigate(`/cricket/ipl/match/${match.id}/scorecard`)}
+      onClick={() => navigate(`/cricket/ipl/scorecard/${match.slug}/${match.series}`)}
     >
       <div className="bg-gradient-to-r from-[#00698c] to-[#0088b0] text-white px-3 sm:px-4 py-2 sm:py-2.5 flex items-center justify-between flex-wrap gap-2">
         <span className="text-xs sm:text-sm font-semibold">{match.date}</span>
@@ -35,12 +36,12 @@ const IPLMatchCard = ({ match }) => {
             <div className="flex items-center gap-2 sm:gap-3">
               <span
                 className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-bold flex-shrink-0"
-                style={{ backgroundColor: match.team1.color || '#dc2626' }}
+                style={{ backgroundColor: match.teams.team1.color }}
               >
-                {match.team1.code}
+               {match.teams?.team1?.code}
               </span>
               <span className="font-semibold text-gray-900 dark:text-white text-sm sm:text-base truncate">
-                {match.team1.name}
+                {match.teams?.team1?.name}
               </span>
             </div>
           </div>
@@ -51,12 +52,13 @@ const IPLMatchCard = ({ match }) => {
             <div className="flex items-center gap-2 sm:gap-3">
               <span
                 className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-bold flex-shrink-0"
-                style={{ backgroundColor: match.team2.color || '#f97316' }}
+                style={{ backgroundColor: match.teams.team2.color  }}
               >
-                {match.team2.code}
+              {match.teams?.team2?.code}
+
               </span>
               <span className="font-semibold text-gray-900 dark:text-white text-sm sm:text-base truncate">
-                {match.team2.name}
+               {match.teams?.team2?.name}
               </span>
             </div>
           </div>
@@ -112,8 +114,8 @@ const IPLPage = () => {
   }, [])
 
   const getMatches = () => {
-    if (activeTab === 'Matches') return iplMatches
-    if (activeTab === 'Home') return iplMatches.slice(0, 3)
+    if (activeTab === 'Matches') return iplScorecards
+    if (activeTab === 'Home') return iplScorecards.slice(0, 3)
     return []
   }
 
@@ -122,7 +124,7 @@ const IPLPage = () => {
   const handleTabClick = (tab) => {
     if (tab === 'Scorecard') {
       // Navigate to first match scorecard
-      navigate(`/cricket/ipl/match/${iplMatches[0]?.id}/scorecard`)
+      navigate(`/cricket/ipl/scorecard/${iplScorecards[0]?.slug}/${iplScorecards[0]?.series}`)
     } else if (TAB_ROUTES[tab]) {
       // News, Photos, Video — navigate to their pages
       navigate(TAB_ROUTES[tab])
@@ -184,7 +186,7 @@ const IPLPage = () => {
                       <IPLMatchCard key={match.id} match={match} />
                     ))}
                   </div>
-                  {activeTab === 'Home' && iplMatches.length > 3 && (
+                  {activeTab === 'Home' && iplScorecards.length > 3 && (
                     <div className="text-center mt-4 sm:mt-6">
                       <button
                         onClick={() => setActiveTab('Matches')}

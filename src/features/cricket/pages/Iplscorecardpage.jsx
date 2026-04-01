@@ -6,7 +6,6 @@ import SportsTabs from '@/layouts/SportsTabs'
 import CricketTabs from '../components/CricketTabs'
 import BlogsSection from '@/shared/components/BlogsSection'
 import SeoManager from '@/core/seo/SeoManager'
-import { iplMatches } from '@/shared/constants/cricket.data'
 import { iplScorecards } from '@/shared/constants/iplScorecards'
 
 // ─── Batting Table ────────────────────────────────────────────────────────────
@@ -229,31 +228,33 @@ const PartnershipsTable = ({ partnerships, batting }) => (
 )
 
 // ─── Match Selector ───────────────────────────────────────────────────────────
-const MatchSelector = ({ matches, selectedId, onSelect }) => (
-  <div className="bg-white dark:bg-[#1c2128] border  border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden mb-4">
+const MatchSelector = ({ matches, selectedSlug, onSelect }) => (
+  <div className="bg-white dark:bg-[#1c2128] border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden mb-4">
     <div className="px-3 sm:px-4 py-2 border-b border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
       <span className="text-xs font-bold text-gray-700 dark:text-gray-300">Select Match</span>
     </div>
+
     <div className="overflow-x-auto scrollbar-hide">
       <div className="flex min-w-max">
         {matches.map((m) => (
           <button
-            key={m.id}
-            onClick={() => onSelect(m.id)}
+            key={m.slug}
+            onClick={() => onSelect(m)}
             className={`flex-shrink-0 px-3 sm:px-4 py-2.5 text-xs font-medium border-b-2 transition-colors whitespace-nowrap flex items-center gap-1.5 ${
-              String(selectedId) === String(m.id)
+              String(selectedSlug) === String(m.slug)
                 ? 'border-[#00698c] text-[#00698c] bg-[#00698c]/5 dark:bg-[#00698c]/10'
                 : 'border-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
             }`}
           >
-            <span className="w-10 h-10 rounded-full flex items-center justify-center text-gray-700  font-bold" >
-              {m.team1?.code?.slice(0, 2)}
+            <span className="w-10 h-10 rounded-full flex items-center justify-center text-gray-700  dark:text-gray-100 font-bold">
+              {m.teams?.team1?.code?.slice(0, 2)}
             </span>
+
             <span className="text-gray-400">vs</span>
-            <span className="w-10 h-10 rounded-full flex items-center justify-center text-gray-700 font-bold">
-              {m.team2?.code?.slice(0, 2)}
+
+            <span className="w-10 h-10 rounded-full flex items-center justify-center dark:text-gray-100 text-gray-700 font-bold">
+              {m.teams?.team2?.code?.slice(0, 2)}
             </span>
-           
           </button>
         ))}
       </div>
@@ -263,7 +264,8 @@ const MatchSelector = ({ matches, selectedId, onSelect }) => (
 
 // ─── Main Page ────────────────────────────────────────────────────────────────
 const IPLScorecardPage = () => {
-  const { matchId } = useParams()
+  const { slug, series } = useParams()
+
   const navigate = useNavigate()
   const [activeInnings, setActiveInnings] = useState(1)
 
@@ -280,28 +282,24 @@ const IPLScorecardPage = () => {
     Video:     '/vediogallary',
   }
 
-  // Resolve match — always default to first match so page is never empty
-  const resolvedId = matchId || String(iplMatches[0]?.id)
-  const match = iplMatches.find(m => String(m.id) === String(resolvedId)) || iplMatches[0]
-
-  // Try key formats: "ipl-1", "ipl-2" etc
-  const scorecardKey = `ipl-${match?.id}`
-  // Always show scorecard — fallback to first available scorecard if current not found
-  const scorecard =
-    iplScorecards[scorecardKey] ||
-    iplScorecards[Object.keys(iplScorecards)[0]]
+ // Find scorecard by slug + series
+const scorecard = iplScorecards.find(
+  (sc) =>
+    String(sc.slug) === String(slug) &&
+    String(sc.series) === String(series)
+)
 
   const team1Innings = scorecard?.teams?.team1?.innings
   const team2Innings = scorecard?.teams?.team2?.innings
 
-  const handleMatchSelect = (id) => {
-    navigate(`/cricket/ipl/match/${id}/scorecard`)
-  }
+const handleMatchSelect = (match) => {
+  navigate(`/cricket/ipl/scorecard/${match.slug}/${match.series}`)
+}
 
   return (
     <>
       <SeoManager
-        title={`${match?.team1?.name || 'IPL'} vs ${match?.team2?.name || ''} Scorecard | IPL 2026 | SportyRadar`}
+       title={`${scorecard?.teams.team1.name} vs ${scorecard?.teams.team2.name} Scorecard | IPL 2026`}
       />
       <SportsTabs />
       <CricketTabs extraTab={{ label: 'IPL 2026', path: '/cricket/ipl' }} />
@@ -389,11 +387,11 @@ const IPLScorecardPage = () => {
 
             {/* Match Selector */}
             <div className="mt-4">
-              <MatchSelector
-                matches={iplMatches}
-                selectedId={resolvedId}
-                onSelect={handleMatchSelect}
-              />
+             <MatchSelector
+  matches={iplScorecards}
+ selectedSlug={scorecard?.slug}
+  onSelect={handleMatchSelect}
+/>
             </div>
 
             {/* Innings toggle tabs */}

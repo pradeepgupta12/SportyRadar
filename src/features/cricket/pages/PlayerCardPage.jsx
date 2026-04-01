@@ -304,10 +304,12 @@ import BlogsSection from '@/shared/components/BlogsSection'
 import SeoManager from '@/core/seo/SeoManager'
 import { iplTeams, iplTeamPlayers } from '@/shared/constants/cricket.data'
 import { Link } from 'react-router-dom'
+const getSlug = (name) =>
+  name.toLowerCase().replace(/\s+/g, '-')
 
 const PlayerRow = ({ player }) => (
   <Link
-    to={`/cricket/player/${player.id}`}
+    to={`/cricket/player/${getSlug(player.name)}`}
     className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-white dark:bg-[#1c2128] border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer hover:border-[#00698c] dark:hover:border-[#00698c] group"
   >
     <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full overflow-hidden flex-shrink-0 bg-gradient-to-br from-yellow-100 to-orange-100 dark:from-yellow-900/30 dark:to-orange-900/30">

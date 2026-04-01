@@ -114,45 +114,11 @@ export const topHeadlineMatches = [
     result: 'India Women won by 4 wkts',
   },
 ];
-export const liveMatches = [
-  {
-    id: 'match-1',
-    type: 'Live',
-    typeLabel: 'Live',
-    series: 'India Women Tour of Australia',
-    team1: { name: 'AUS - W', flag: 'https://th.bing.com/th/id/R.607b9f69862d76af04b474113c0c7ff5?rik=lfnOsbv7mhDNbQ&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fb%2fbc%2fFlag_of_India.png&ehk=Pk5lH0C%2fhstFahWfb15vLjtrJb3DslIU4%2fAQneo9IIM%3d&risl=&pid=ImgRaw&r=0', score: null, status: 'Bowling' },
-    team2: { name: 'IND - W', flag: 'https://th.bing.com/th/id/R.607b9f69862d76af04b474113c0c7ff5?rik=lfnOsbv7mhDNbQ&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fb%2fbc%2fFlag_of_India.png&ehk=Pk5lH0C%2fhstFahWfb15vLjtrJb3DslIU4%2fAQneo9IIM%3d&risl=&pid=ImgRaw&r=0', score: '49 / 1 (13.4)', status: null },
-  },
-  {
-    id: 'match-2',
-    type: 'Cricket',
-    typeLabel: 'Cricket',
-    series: 'India Women Tour of Australia',
-    team1: { name: 'AUS - W', flag: 'https://th.bing.com/th/id/R.607b9f69862d76af04b474113c0c7ff5?rik=lfnOsbv7mhDNbQ&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fb%2fbc%2fFlag_of_India.png&ehk=Pk5lH0C%2fhstFahWfb15vLjtrJb3DslIU4%2fAQneo9IIM%3d&risl=&pid=ImgRaw&r=0', score: null, status: null },
-    team2: { name: 'IND - W', flag: 'https://th.bing.com/th/id/R.607b9f69862d76af04b474113c0c7ff5?rik=lfnOsbv7mhDNbQ&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fb%2fbc%2fFlag_of_India.png&ehk=Pk5lH0C%2fhstFahWfb15vLjtrJb3DslIU4%2fAQneo9IIM%3d&risl=&pid=ImgRaw&r=0', score: null, status: null },
-    schedule: 'Tomorrow at 10:50 am IST',
-  },
-  {
-    id: 'match-3',
-    type: 'Live',
-    typeLabel: 'Live',
-    series: 'India Women Tour of Australia',
-    team1: { name: 'AUS - W', flag: 'https://th.bing.com/th/id/R.607b9f69862d76af04b474113c0c7ff5?rik=lfnOsbv7mhDNbQ&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fb%2fbc%2fFlag_of_India.png&ehk=Pk5lH0C%2fhstFahWfb15vLjtrJb3DslIU4%2fAQneo9IIM%3d&risl=&pid=ImgRaw&r=0', score: null, status: 'Bowling' },
-    team2: { name: 'IND - W', flag: 'https://th.bing.com/th/id/R.607b9f69862d76af04b474113c0c7ff5?rik=lfnOsbv7mhDNbQ&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fb%2fbc%2fFlag_of_India.png&ehk=Pk5lH0C%2fhstFahWfb15vLjtrJb3DslIU4%2fAQneo9IIM%3d&risl=&pid=ImgRaw&r=0', score: '49 / 1 (13.4)', status: null },
-  },
-  {
-    id: 'match-4',
-    type: 'Live',
-    typeLabel: 'Live',
-    series: 'India Women Tour of Australia',
-    team1: { name: 'AUS - W', flag: 'https://th.bing.com/th/id/R.607b9f69862d76af04b474113c0c7ff5?rik=lfnOsbv7mhDNbQ&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fb%2fbc%2fFlag_of_India.png&ehk=Pk5lH0C%2fhstFahWfb15vLjtrJb3DslIU4%2fAQneo9IIM%3d&risl=&pid=ImgRaw&r=0', score: null, status: 'Bowling' },
-    team2: { name: 'IND - W', flag: 'https://th.bing.com/th/id/R.607b9f69862d76af04b474113c0c7ff5?rik=lfnOsbv7mhDNbQ&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fb%2fbc%2fFlag_of_India.png&ehk=Pk5lH0C%2fhstFahWfb15vLjtrJb3DslIU4%2fAQneo9IIM%3d&risl=&pid=ImgRaw&r=0', score: '49 / 1 (13.4)', status: null },
-  },
-]
 
-export const liveScores = [
+
+export const liveMatch = [
   {
-    id: 'ls-1',
+    slug: 'australia-women-vs-india-women-one-off-test-2026-day-1',
     isLive: true,
     series: 'India Women Tour of Australia',
     matchType: 'One-off Test, India Women in Australia, One-off Test, 2026',
@@ -162,29 +128,46 @@ export const liveScores = [
     summary: 'Australia Women lead by 102 runs',
   },
   {
-    id: 'ls-2',
+    slug: 'australia-women-vs-india-women-one-off-test-2026-day-2',
     isLive: true,
-    series: 'India Women Tour of Australia',
+    series: 'India Women Tour of India',
     matchType: 'One-off Test, India Women in Australia, One-off Test, 2026',
-    status: 'Day 1 | Stumps',
+    status: 'Day 2 | Stumps',
     team1: { name: 'Australia Women', flag: '🇦🇺', score: '98/3 (27.0)' },
     team2: { name: 'India Women', flag: '🇮🇳', score: '198' },
     summary: 'Australia Women lead by 102 runs',
   },
 ]
-
 export const upcomingMatches = [
   {
-    id: 'um-1',
-    series: 'Final ICC Men\'s T20 World Cup, 2026',
+    slug: 'new-zealand-vs-india-t20-world-cup-final-2026',
+    series: "Final ICC Men's T20 World Cup, 2026",
     date: 'Sun, 08 Mar, 07:00 PM',
     team1: { name: 'New Zealand', flag: '🇳🇿' },
     team2: { name: 'India', flag: '🇮🇳' },
     venue: 'Narenda Modi Stadium, Ahmedabad',
   },
   {
-    id: 'um-2',
-    series: 'Final ICC Men\'s T20 World Cup, 2026',
+    slug: 'new-zealand-vs-india-t20-world-cup-final-2026-2',
+    series: "Final ICC Men's T20 World Cup, 2026",
+    date: 'Sun, 08 Mar, 07:00 PM',
+    team1: { name: 'New Zealand', flag: '🇳🇿' },
+    team2: { name: 'India', flag: '🇮🇳' },
+    venue: 'Narenda Modi Stadium, Ahmedabad',
+  },
+]
+export const recentMatches = [
+  {
+    slug: 'new-zealand-vs-india-t20-world-cup-final-2026-result-1',
+    series: "Final ICC Men's T20 World Cup, 2026",
+    date: 'Sun, 08 Mar, 07:00 PM',
+    team1: { name: 'New Zealand', flag: '🇳🇿' },
+    team2: { name: 'India', flag: '🇮🇳' },
+    venue: 'Narenda Modi Stadium, Ahmedabad',
+  },
+  {
+    slug: 'new-zealand-vs-india-t20-world-cup-final-2026-result-2',
+    series: "Final ICC Men's T20 World Cup, 2026",
     date: 'Sun, 08 Mar, 07:00 PM',
     team1: { name: 'New Zealand', flag: '🇳🇿' },
     team2: { name: 'India', flag: '🇮🇳' },
@@ -192,24 +175,8 @@ export const upcomingMatches = [
   },
 ]
 
-export const recentMatches = [
-  {
-    id: 'rm-1',
-    series: 'Final ICC Men\'s T20 World Cup, 2026',
-    date: 'Sun, 08 Mar, 07:00 PM',
-    team1: { name: 'New Zealand', flag: '🇳🇿' },
-    team2: { name: 'India', flag: '🇮🇳' },
-    venue: 'Narenda Modi Stadium, Ahmedabad',
-  },
-  {
-    id: 'rm-2',
-    series: 'Final ICC Men\'s T20 World Cup, 2026',
-    date: 'Sun, 08 Mar, 07:00 PM',
-    team1: { name: 'New Zealand', flag: '🇳🇿' },
-    team2: { name: 'India', flag: '🇮🇳' },
-    venue: 'Narenda Modi Stadium, Ahmedabad',
-  },
-]
+
+
 
 export const currentSeries = [
   {
@@ -373,16 +340,16 @@ export const iplMatches = [
 export const iplTeamPlayers = {
   'Royal Challengers Bengaluru': [
     {
-      id: 'p-1',
+   
       name: 'Virat Kohli',
       role: 'Top order Batter',
       age: '37y 9d',
       batting: 'Right hand Bat',
       bowling: 'Right arm Medium',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Virat_Kohli_2022.jpg/200px-Virat_Kohli_2022.jpg',
+      image: 'https://im.rediff.com/cricket/2022/sep/08vk.gif',  // Example public image link; replace with actual if needed
     },
     {
-      id: 'p-2',
+   
       name: 'Devdutt Padikkal',
       role: 'Top order Batter',
       age: '37y 9d',
@@ -390,66 +357,41 @@ export const iplTeamPlayers = {
       bowling: 'Right arm Medium',
       image: null,
     },
-    {
-      id: 'p-3',
-      name: 'Devdutt Padikkal',
-      role: 'Top order Batter',
-      age: '37y 9d',
-      batting: 'Right hand Bat',
-      bowling: 'Right arm Medium',
-      image: null,
-    },
-    {
-      id: 'p-4',
-      name: 'Devdutt Padikkal',
-      role: 'Top order Batter',
-      age: '37y 9d',
-      batting: 'Right hand Bat',
-      bowling: 'Right arm Medium',
-      image: null,
-    },
-    {
-      id: 'p-5',
-      name: 'Devdutt Padikkal',
-      role: 'Top order Batter',
-      age: '37y 9d',
-      batting: 'Right hand Bat',
-      bowling: 'Right arm Medium',
-      image: null,
-    },
+    
   ],
   'Chennai Super Kings': [
-    { id: 'p-6', name: 'MS Dhoni', role: 'Wicket Keeper', age: '44y 3d', batting: 'Right hand Bat', bowling: 'Right arm Medium', image: null },
-    { id: 'p-7', name: 'Ruturaj Gaikwad', role: 'Top order Batter', age: '27y 5d', batting: 'Right hand Bat', bowling: 'Right arm Off break', image: null },
+    {  name: 'MS Dhoni', role: 'Wicket Keeper', age: '44y 3d', batting: 'Right hand Bat', bowling: 'Right arm Medium', image: null },
+    {name: 'Ruturaj Gaikwad', role: 'Top order Batter', age: '27y 5d', batting: 'Right hand Bat', bowling: 'Right arm Off break', image: null },
   ],
   'Delhi Capitals': [
-    { id: 'p-8', name: 'Rishabh Pant', role: 'Wicket Keeper', age: '26y 2d', batting: 'Left hand Bat', bowling: 'Right arm Medium', image: null },
+    { name: 'Rishabh Pant', role: 'Wicket Keeper', age: '26y 2d', batting: 'Left hand Bat', bowling: 'Right arm Medium', image: null },
   ],
   'Gujarat Titans': [
-    { id: 'p-9', name: 'Shubman Gill', role: 'Top order Batter', age: '24y 8d', batting: 'Right hand Bat', bowling: 'Right arm Medium', image: null },
+    {name: 'Shubman Gill', role: 'Top order Batter', age: '24y 8d', batting: 'Right hand Bat', bowling: 'Right arm Medium', image: null },
   ],
   'Punjab Kings': [
-    { id: 'p-10', name: 'Shreyas Iyer', role: 'Middle order Batter', age: '29y 4d', batting: 'Right hand Bat', bowling: 'Right arm leg break', image: null },
+    {name: 'Shreyas Iyer', role: 'Middle order Batter', age: '29y 4d', batting: 'Right hand Bat', bowling: 'Right arm leg break', image: null },
   ],
   'Kolkata Knight Riders': [
-    { id: 'p-11', name: 'Venkatesh Iyer', role: 'All Rounder', age: '29y 1d', batting: 'Left hand Bat', bowling: 'Right arm Medium', image: null },
+    { name: 'Venkatesh Iyer', role: 'All Rounder', age: '29y 1d', batting: 'Left hand Bat', bowling: 'Right arm Medium', image: null },
   ],
   'Sunrisers Hyderabad': [
-    { id: 'p-12', name: 'Pat Cummins', role: 'Bowler', age: '31y 5d', batting: 'Right hand Bat', bowling: 'Right arm Fast medium', image: null },
+    {  name: 'Pat Cummins', role: 'Bowler', age: '31y 5d', batting: 'Right hand Bat', bowling: 'Right arm Fast medium', image: null },
   ],
   'Rajasthan Royals': [
-    { id: 'p-13', name: 'Sanju Samson', role: 'Wicket Keeper', age: '29y 7d', batting: 'Right hand Bat', bowling: 'Right arm leg break', image: null },
+    { name: 'Sanju Samson', role: 'Wicket Keeper', age: '29y 7d', batting: 'Right hand Bat', bowling: 'Right arm leg break', image: null },
   ],
   'Lucknow Super Giants': [
-    { id: 'p-14', name: 'KL Rahul', role: 'Wicket Keeper', age: '32y 1d', batting: 'Right hand Bat', bowling: 'Right arm leg break', image: null },
+    {  name: 'KL Rahul', role: 'Wicket Keeper', age: '32y 1d', batting: 'Right hand Bat', bowling: 'Right arm leg break', image: null },
   ],
   'Mumbai Indians': [
-    { id: 'p-15', name: 'Hardik Pandya', role: 'All Rounder', age: '30y 8d', batting: 'Right hand Bat', bowling: 'Right arm Medium fast', image: null },
+    { name: 'Hardik Pandya', role: 'All Rounder', age: '30y 8d', batting: 'Right hand Bat', bowling: 'Right arm Medium fast', image: null },
   ],
 }
 
-export const playerDetail = {
-  id: 'p-1',
+export const playerDetail = [
+{
+
   name: 'Virat Kohli',
   born: 'November 05, 1988 (37 years)',
   birthPlace: 'Delhi',
@@ -457,13 +399,90 @@ export const playerDetail = {
   role: 'Batsman',
   battingStyle: 'Right Handed Bat',
   bowlingStyle: 'Right-arm medium',
-  image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Virat_Kohli_2022.jpg/200px-Virat_Kohli_2022.jpg',
+  image: 'https://static.wixstatic.com/media/3c585f_28528aead9c34022b091dd2fb0c473c9~mv2.webp',  // Example public image link; replace with actual if needed
   summary: `A spunky, chubby teenager with gelled hair shot to fame after leading India to glory in the Under-19 World Cup at Kuala Lumpur in early 2008. In an Indian team filled with saint-like icons worthy of their own hagiographies, Virat Kohli, with his most un-Indian, 'bad-boy' intensity, would clearly be an outcast.
 
-A spunky, chubby teenager with gelled hair shot to fame after leading India to glory in the Under-19 World Cup at Kuala Lumpur in early 2008. In an Indian team filled with saint-like icons worthy of their own hagiographies, Virat Kohli, with his most un-Indian, 'bad-boy' intensity, would clearly be an outcast.
+
 
 A spunky, chubby teenager with gelled hair shot to fame after leading India to glory in the Under-19 World Cup at Kuala Lumpur in early 2008. In an Indian team filled with saint-like icons worthy of their own hagiographies, Virat Kohli, with his most un-Indian, 'bad-boy' intensity, would clearly be an outcast.`,
+},
+{
+
+  name: 'Devdutt Padikkal',
+  born: 'July 07, 2000 (25 years)',
+  birthPlace: 'Edapal, Kerala, India',
+  height: '6 ft 3 in (191 cm)',
+  role: 'Top order Batter',
+  battingStyle: 'Left Handed Bat',
+  bowlingStyle: 'Right-arm Offbreak',
+  image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Devdutt_Padikkal_in_2024.jpg/200px-Devdutt_Padikkal_in_2024.jpg',  // Example public image link; replace with actual if needed
+  summary: `Devdutt Padikkal is an elegant left-handed top-order batter known for his tall stature and graceful strokeplay. Born in Edapal, Kerala, he rose through the ranks with Karnataka and made an instant impact in the IPL with Royal Challengers Bengaluru in 2020, scoring 473 runs in his debut season and winning the Emerging Player Award.
+
+At 6'3", Padikkal uses his height and reach effectively, especially against pace, and has a solid technique that allows him to play both aggressive and anchor roles. He also bowls useful right-arm offbreaks, adding value as a part-timer. After stints with Rajasthan Royals and Lucknow Super Giants, he returned to RCB and played a key role in their historic 2025 IPL title win with aggressive starts at the top of the order (247 runs in 10 matches at a strike rate of 150+ before injury).
+
+A former India U-19 and India A player, Padikkal continues to impress in domestic cricket for Karnataka. His calm demeanor off the field contrasts with his fluent batting, making him one of India's promising young talents in white-ball cricket. Fans appreciate his ability to find gaps with timing rather than brute power, and he remains a vital part of RCB's batting lineup in IPL 2026.`,
+  // Additional useful fields you can expand on:
+  debut: {
+    ipl: '2020',
+    domestic: '2018-19',
+    international: 'None (India A level)'
+  },
+  majorAchievements: [
+    'Emerging Player Award - IPL 2020',
+    'Key contributor in RCB\'s maiden IPL title (2025)',
+    'Multiple 50+ scores in IPL and domestic seasons',
+    'Represented India A and Karnataka in Ranji Trophy/Syed Mushtaq Ali'
+  ],
+  iplStats: {
+    matches: 75,
+    runs: 1867,
+    highestScore: '101*',
+    average: 25.93,
+    strikeRate: 128.23,
+    fifties: 12,
+    hundreds: 1
+  },
+  teamsPlayedFor: ['Royal Challengers Bengaluru', 'Rajasthan Royals', 'Lucknow Super Giants', 'Karnataka']
+},
+{
+ // Matching one of the Devdutt Padikkal entries in your array
+  name: 'Ruturaj Gaikwad',
+  born: 'July 07, 2000 (25 years)',
+  birthPlace: 'Edapal, Kerala, India',
+  height: '6 ft 3 in (191 cm)',
+  role: 'Top order Batter',
+  battingStyle: 'Left Handed Bat',
+  bowlingStyle: 'Right-arm Offbreak',
+  image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Devdutt_Padikkal_in_2024.jpg/200px-Devdutt_Padikkal_in_2024.jpg',  // Example public image link; replace with actual if needed
+  summary: `Devdutt Padikkal is an elegant left-handed top-order batter known for his tall stature and graceful strokeplay. Born in Edapal, Kerala, he rose through the ranks with Karnataka and made an instant impact in the IPL with Royal Challengers Bengaluru in 2020, scoring 473 runs in his debut season and winning the Emerging Player Award.
+
+At 6'3", Padikkal uses his height and reach effectively, especially against pace, and has a solid technique that allows him to play both aggressive and anchor roles. He also bowls useful right-arm offbreaks, adding value as a part-timer. After stints with Rajasthan Royals and Lucknow Super Giants, he returned to RCB and played a key role in their historic 2025 IPL title win with aggressive starts at the top of the order (247 runs in 10 matches at a strike rate of 150+ before injury).
+
+A former India U-19 and India A player, Padikkal continues to impress in domestic cricket for Karnataka. His calm demeanor off the field contrasts with his fluent batting, making him one of India's promising young talents in white-ball cricket. Fans appreciate his ability to find gaps with timing rather than brute power, and he remains a vital part of RCB's batting lineup in IPL 2026.`,
+  // Additional useful fields you can expand on:
+  debut: {
+    ipl: '2020',
+    domestic: '2018-19',
+    international: 'None (India A level)'
+  },
+  majorAchievements: [
+    'Emerging Player Award - IPL 2020',
+    'Key contributor in RCB\'s maiden IPL title (2025)',
+    'Multiple 50+ scores in IPL and domestic seasons',
+    'Represented India A and Karnataka in Ranji Trophy/Syed Mushtaq Ali'
+  ],
+  iplStats: {
+    matches: 75,
+    runs: 1867,
+    highestScore: '101*',
+    average: 25.93,
+    strikeRate: 128.23,
+    fifties: 12,
+    hundreds: 1
+  },
+  teamsPlayedFor: ['Royal Challengers Bengaluru', 'Rajasthan Royals', 'Lucknow Super Giants', 'Karnataka']
 }
+]
 
 export const iplMatchTeams = {
   team1: {
