@@ -6,7 +6,7 @@ const CricketTabs = memo(({ extraTab }) => {
   const location = useLocation()
 
   return (
-    <div className="border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-[#161b22] pb-4">
+    <div className="border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-[#161b22] py-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center overflow-x-auto scrollbar-hide gap-0">
               

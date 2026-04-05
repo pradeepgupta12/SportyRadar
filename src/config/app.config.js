@@ -18,7 +18,7 @@ export const appConfig = {
   // Navigation
   navItems: [
     { label: 'Home', path: '/' },
-    { label: 'Ipl-2026', path: '/cricket/ipl' },
+    { label: 'IPL-2026', path: '/cricket/ipl' },
     { label: 'News', path: '/news' },
     { label: 'Blogs', path: '/blogs' },
   ],

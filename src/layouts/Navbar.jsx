@@ -38,7 +38,7 @@ const Navbar = memo(() => {
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
           <Link to="/" className="text-xl font-bold tracking-tight hover:opacity-90 transition-opacity">
-            SportyRadar
+            SportlyRadar
           </Link>
 
           {/* Desktop Nav */}

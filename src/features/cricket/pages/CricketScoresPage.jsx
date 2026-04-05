@@ -1,5 +1,189 @@
 
 
+// import { memo } from 'react'
+// import { useNavigate } from 'react-router-dom'
+// import SportsTabs from '@/layouts/SportsTabs'
+// import CricketTabs from '../components/CricketTabs'
+// import SectionHeader from '@/shared/components/SectionHeader'
+// import BlogsSection from '@/shared/components/BlogsSection'
+// import SeoManager from '@/core/seo/SeoManager'
+// import { seoConfig } from '@/config/seo.config'
+// import { liveMatch, upcomingMatches, recentMatches } from '@/shared/constants/cricket.data'
+// const createSlug = (team1, team2, extra = '') =>
+//   `${team1}-${team2}-${extra}`
+//     .toLowerCase()
+//     .replace(/\s+/g, '-')
+
+// const LiveMatchCard = memo(({ match }) => {
+//   const navigate = useNavigate()
+
+//   return (
+//     <div
+//       className="bg-white dark:bg-[#1c2128] border border-gray-200 dark:border-gray-700 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+//       onClick={() => navigate(`/cricket/${match.slug}`)}
+//     >
+//       <div className="flex items-center gap-1.5 mb-1">
+//         <span className="flex items-center gap-1 text-red-500 text-xs font-semibold">
+//           <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse" />
+//           LIVE
+//         </span>
+//       </div>
+
+//       <p className="text-sm font-bold text-gray-900 dark:text-white mb-0.5">
+//         {match.series}
+//       </p>
+//       <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">
+//         {match.matchType}
+//       </p>
+//       <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">
+//         {match.status}
+//       </p>
+
+//       <div className="space-y-2">
+//         <div className="flex items-center justify-between">
+//           <div className="flex items-center gap-2">
+//             <span className="text-xl">{match.team1.flag}</span>
+//             <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
+//               {match.team1.name}
+//             </span>
+//           </div>
+//           <span className="text-sm font-bold text-gray-900 dark:text-white">
+//             {match.team1.score}
+//           </span>
+//         </div>
+
+//         <div className="flex items-center justify-between">
+//           <div className="flex items-center gap-2">
+//             <span className="text-xl">{match.team2.flag}</span>
+//             <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
+//               {match.team2.name}
+//             </span>
+//           </div>
+//           <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
+//             {match.team2.score}
+//           </span>
+//         </div>
+//       </div>
+
+//       {match.summary && (
+//         <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 pt-2 border-t border-gray-100 dark:border-gray-700">
+//           {match.summary}
+//         </p>
+//       )}
+//     </div>
+//   )
+// })
+
+// const UpcomingCard = memo(({ match }) => (
+//   <div className="bg-white dark:bg-[#1c2128] border border-gray-200 dark:border-gray-700 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+//     <div className="flex items-start justify-between mb-2">
+//       <div>
+//         <p className="text-sm font-semibold text-gray-800 dark:text-white">
+//           {match.series}
+//         </p>
+//         <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+//           {match.date}
+//         </p>
+//       </div>
+//       <svg
+//         className="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5"
+//         fill="none"
+//         stroke="currentColor"
+//         viewBox="0 0 24 24"
+//       >
+//         <path strokeWidth="2" strokeLinecap="round" d="M9 18l6-6-6-6" />
+//       </svg>
+//     </div>
+
+//     <div className="space-y-2">
+//       <div className="flex items-center gap-2">
+//         <span className="text-xl">{match.team1.flag}</span>
+//         <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
+//           {match.team1.name}
+//         </span>
+//       </div>
+//       <div className="flex items-center gap-2">
+//         <span className="text-xl">{match.team2.flag}</span>
+//         <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
+//           {match.team2.name}
+//         </span>
+//       </div>
+//     </div>
+
+//     {match.venue && (
+//       <p className="text-xs text-gray-400 dark:text-gray-500 mt-2">
+//         {match.venue}
+//       </p>
+//     )}
+//   </div>
+// ))
+
+// const CricketScoresPage = () => {
+//   return (
+//     <>
+//       <SeoManager
+//         title={seoConfig.pages.cricket.title}
+//         description={seoConfig.pages.cricket.description}
+//       />
+
+//       <SportsTabs />
+//       <CricketTabs />
+
+//       {/* Main layout: scores content + right sidebar space */}
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
+//         <div className="flex gap-6">
+
+//           {/* Left: Scores content — narrowed to make room for right sidebar */}
+//           <div className="w-full lg:w-[80%] min-w-0">
+//             <SectionHeader title="Live Cricket Score" />
+
+//             {/* Live Matches */}
+//             <div className="space-y-3 mb-8">
+//               {liveMatch.map((match) => (
+//                 <LiveMatchCard key={match.slug} match={match} />
+//               ))}
+//             </div>
+
+//             {/* Upcoming Matches */}
+//             <h3 className="text-base font-bold text-gray-900 dark:text-white mb-3">
+//               Upcoming Matches
+//             </h3>
+//             <div className="space-y-3 mb-8">
+//               {upcomingMatches.map((match) => (
+//                 <UpcomingCard key={match.slug} match={match} />
+//               ))}
+//             </div>
+
+//             {/* Recent Matches */}
+//             <h3 className="text-base font-bold text-gray-900 dark:text-white mb-3">
+//               Recent Matches
+//             </h3>
+//             <div className="space-y-3 mb-8">
+//               {recentMatches.map((match) => (
+//                 <UpcomingCard key={match.slug} match={match} />
+//               ))}
+//             </div>
+//           </div>
+
+//           {/* Right: Empty space reserved for future sidebar — adjust w-[20%] to control width */}
+//           <div className="hidden lg:block lg:w-[20%]">
+//             {/* Sidebar content add karo yahan */}
+//           </div>
+
+//         </div>
+//       </div>
+
+//       {/* BlogsSection: separate full-width container — unaffected by above layout changes */}
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6">
+//         <BlogsSection />
+//       </div>
+//     </>
+//   )
+// }
+
+// export default CricketScoresPage
+
+
 import { memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import SportsTabs from '@/layouts/SportsTabs'
@@ -9,11 +193,24 @@ import BlogsSection from '@/shared/components/BlogsSection'
 import SeoManager from '@/core/seo/SeoManager'
 import { seoConfig } from '@/config/seo.config'
 import { liveMatch, upcomingMatches, recentMatches } from '@/shared/constants/cricket.data'
+
 const createSlug = (team1, team2, extra = '') =>
   `${team1}-${team2}-${extra}`
     .toLowerCase()
     .replace(/\s+/g, '-')
 
+// ── Reusable flag image ───────────────────────────────────────────────────────
+const FlagImg = ({ src, alt }) => (
+  <img
+    src={src}
+    alt={alt}
+    className="w-8 h-5 object-cover rounded-sm flex-shrink-0 shadow-sm border border-gray-200 dark:border-gray-600"
+    loading="lazy"
+    onError={(e) => { e.target.style.display = 'none' }}
+  />
+)
+
+// ── Live Match Card ───────────────────────────────────────────────────────────
 const LiveMatchCard = memo(({ match }) => {
   const navigate = useNavigate()
 
@@ -22,51 +219,59 @@ const LiveMatchCard = memo(({ match }) => {
       className="bg-white dark:bg-[#1c2128] border border-gray-200 dark:border-gray-700 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
       onClick={() => navigate(`/cricket/${match.slug}`)}
     >
-      <div className="flex items-center gap-1.5 mb-1">
-        <span className="flex items-center gap-1 text-red-500 text-xs font-semibold">
+      {/* LIVE badge */}
+      <div className="flex items-center gap-1.5 mb-2">
+        <span className="flex items-center gap-1 text-red-500 text-xs font-bold">
           <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse" />
           LIVE
         </span>
       </div>
 
-      <p className="text-sm font-bold text-gray-900 dark:text-white mb-0.5">
+      {/* Series */}
+      <p className="text-base font-extrabold text-gray-900 dark:text-white mb-0.5">
         {match.series}
       </p>
-      <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">
+
+      {/* Match type */}
+      <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-0.5">
         {match.matchType}
       </p>
-      <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">
+
+      {/* Status */}
+      <p className="text-sm font-semibold text-[#00698c] dark:text-[#3387a3] mb-3">
         {match.status}
       </p>
 
-      <div className="space-y-2">
+      {/* Teams */}
+      <div className="space-y-2.5">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-xl">{match.team1.flag}</span>
-            <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
+          <div className="flex items-center gap-2.5">
+            <FlagImg src={match.team1.flag} alt={match.team1.name} />
+            <span className="text-sm font-bold text-gray-700 dark:text-gray-200">
               {match.team1.name}
             </span>
           </div>
-          <span className="text-sm font-bold text-gray-900 dark:text-white">
+          <span className="text-sm font-extrabold text-gray-900 dark:text-white">
             {match.team1.score}
           </span>
         </div>
 
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-xl">{match.team2.flag}</span>
-            <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
+          <div className="flex items-center gap-2.5">
+            <FlagImg src={match.team2.flag} alt={match.team2.name} />
+            <span className="text-sm font-bold text-gray-700 dark:text-gray-200">
               {match.team2.name}
             </span>
           </div>
-          <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
+          <span className="text-sm font-bold text-gray-600 dark:text-gray-300">
             {match.team2.score}
           </span>
         </div>
       </div>
 
+      {/* Summary */}
       {match.summary && (
-        <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 pt-2 border-t border-gray-100 dark:border-gray-700">
+        <p className="text-sm font-semibold text-gray-500 dark:text-gray-400 mt-3 pt-2 border-t border-gray-100 dark:border-gray-700">
           {match.summary}
         </p>
       )}
@@ -74,14 +279,15 @@ const LiveMatchCard = memo(({ match }) => {
   )
 })
 
+// ── Upcoming / Recent Card ────────────────────────────────────────────────────
 const UpcomingCard = memo(({ match }) => (
   <div className="bg-white dark:bg-[#1c2128] border border-gray-200 dark:border-gray-700 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
-    <div className="flex items-start justify-between mb-2">
+    <div className="flex items-start justify-between mb-3">
       <div>
-        <p className="text-sm font-semibold text-gray-800 dark:text-white">
+        <p className="text-base font-extrabold text-gray-800 dark:text-white">
           {match.series}
         </p>
-        <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+        <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mt-0.5">
           {match.date}
         </p>
       </div>
@@ -95,29 +301,30 @@ const UpcomingCard = memo(({ match }) => (
       </svg>
     </div>
 
-    <div className="space-y-2">
-      <div className="flex items-center gap-2">
-        <span className="text-xl">{match.team1.flag}</span>
-        <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
+    <div className="space-y-2.5">
+      <div className="flex items-center gap-2.5">
+        <FlagImg src={match.team1.flag} alt={match.team1.name} />
+        <span className="text-sm font-bold text-gray-700 dark:text-gray-200">
           {match.team1.name}
         </span>
       </div>
-      <div className="flex items-center gap-2">
-        <span className="text-xl">{match.team2.flag}</span>
-        <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
+      <div className="flex items-center gap-2.5">
+        <FlagImg src={match.team2.flag} alt={match.team2.name} />
+        <span className="text-sm font-bold text-gray-700 dark:text-gray-200">
           {match.team2.name}
         </span>
       </div>
     </div>
 
     {match.venue && (
-      <p className="text-xs text-gray-400 dark:text-gray-500 mt-2">
-        {match.venue}
+      <p className="text-xs font-medium text-gray-400 dark:text-gray-500 mt-2.5">
+        📍 {match.venue}
       </p>
     )}
   </div>
 ))
 
+// ── Page ─────────────────────────────────────────────────────────────────────
 const CricketScoresPage = () => {
   return (
     <>
@@ -129,11 +336,10 @@ const CricketScoresPage = () => {
       <SportsTabs />
       <CricketTabs />
 
-      {/* Main layout: scores content + right sidebar space */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
         <div className="flex gap-6">
 
-          {/* Left: Scores content — narrowed to make room for right sidebar */}
+          {/* Left: Scores content */}
           <div className="w-full lg:w-[80%] min-w-0">
             <SectionHeader title="Live Cricket Score" />
 
@@ -145,7 +351,7 @@ const CricketScoresPage = () => {
             </div>
 
             {/* Upcoming Matches */}
-            <h3 className="text-base font-bold text-gray-900 dark:text-white mb-3">
+            <h3 className="text-lg font-extrabold text-gray-900 dark:text-white mb-3">
               Upcoming Matches
             </h3>
             <div className="space-y-3 mb-8">
@@ -155,7 +361,7 @@ const CricketScoresPage = () => {
             </div>
 
             {/* Recent Matches */}
-            <h3 className="text-base font-bold text-gray-900 dark:text-white mb-3">
+            <h3 className="text-lg font-extrabold text-gray-900 dark:text-white mb-3">
               Recent Matches
             </h3>
             <div className="space-y-3 mb-8">
@@ -165,7 +371,7 @@ const CricketScoresPage = () => {
             </div>
           </div>
 
-          {/* Right: Empty space reserved for future sidebar — adjust w-[20%] to control width */}
+          {/* Right: reserved sidebar */}
           <div className="hidden lg:block lg:w-[20%]">
             {/* Sidebar content add karo yahan */}
           </div>
@@ -173,7 +379,7 @@ const CricketScoresPage = () => {
         </div>
       </div>
 
-      {/* BlogsSection: separate full-width container — unaffected by above layout changes */}
+      {/* BlogsSection */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <BlogsSection />
       </div>

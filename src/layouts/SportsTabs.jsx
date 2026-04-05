@@ -12,7 +12,7 @@ const SportsTabs = memo(() => {
   }
 
   return (
-    <div className="bg-[#0a3d4f] dark:bg-[#0a1628]">
+    <div className="bg-[#011E28] dark:bg-[#011E28]">
       <LiveTicker/>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center gap-1 overflow-x-auto scrollbar-hide py-2">
