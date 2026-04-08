@@ -108,7 +108,7 @@ const BlogsPage = () => {
         description={seoConfig.pages.blogs.description}
       />
 
-      <div className="text-black py-4 px-4">
+      <div className="text-black dark:text-white py-4 px-4">
         <div className="max-w-7xl mx-auto sm:px-12 md:px-2 lg:px-6">
           {/* CHANGED: text-xl font-bold → text-2xl font-extrabold */}
           <h1 className="text-2xl font-extrabold">Blogs</h1>
